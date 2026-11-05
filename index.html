@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İlayda Tezcan</title>
+<meta name="description" content="İlayda Tezcan — MBA candidate at Columbia Business School, former BCG consultant focused on energy, industrials and climate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#03522D; --green:#197A56; --bright:#29BA74; --mint:#EAF6EF;
+    --text:#1F2A24; --muted:#5A6B62; --bg:#F6F8F7; --card:#FFFFFF; --line:#DDE6E1;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif}
+  a{color:var(--green)}
+  h1,h2,h3{color:var(--deep);line-height:1.2;margin:0;letter-spacing:-.01em}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+  .brand{font-weight:800;color:var(--deep);text-decoration:none;font-size:1.05rem;white-space:nowrap}
+  .brand span{color:var(--bright)}
+  .links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;height:100%}
+  .links::-webkit-scrollbar{display:none}
+  .links a{display:flex;align-items:center;text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:600;padding:0 14px;white-space:nowrap;border-bottom:3px solid transparent;transition:.15s}
+  .links a:hover,.links a.active{color:var(--deep);border-bottom-color:var(--bright)}
+
+  /* Hero */
+  .hero{background:linear-gradient(120deg,var(--deep) 0%,var(--green) 100%);color:#fff;padding:72px 0 88px}
+  .hero .wrap{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+  .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#BFF0D4;margin-bottom:14px}
+  .hero h1{color:#fff;font-size:clamp(2.3rem,5.5vw,3.6rem);font-weight:800}
+  .hero h1 .dot{color:var(--bright)}
+  .hero p.lead{font-size:1.15rem;color:#DDF3E6;max-width:580px;margin:18px 0 28px}
+  .photo{width:220px;height:220px;object-fit:cover;border:4px solid var(--bright)}
+  .contact{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:.92rem;padding:10px 18px;border:1.5px solid rgba(255,255,255,.6);color:#fff;transition:.15s}
+  .btn:hover{background:rgba(255,255,255,.12);border-color:#fff}
+  .btn.primary{background:var(--bright);border-color:var(--bright);color:#03331C}
+  .btn.primary:hover{background:#3FD088}
+  .btn svg{width:16px;height:16px;fill:currentColor}
+  .meta{color:#BFF0D4;font-size:.9rem;margin-top:16px}
+
+  /* Quick tiles */
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:-44px;background:var(--card);border:1px solid var(--line);box-shadow:0 10px 30px rgba(3,82,45,.10)}
+  .tile{display:block;text-decoration:none;padding:20px;border-right:1px solid var(--line);border-top:4px solid transparent;transition:.15s}
+  .tile:last-child{border-right:0}
+  .tile:hover{border-top-color:var(--bright);background:var(--mint)}
+  .tile .num{font-size:1.6rem;font-weight:800;color:var(--bright)}
+  .tile .lbl{color:var(--deep);font-weight:700;font-size:.95rem}
+  .tile .sub{color:var(--muted);font-size:.82rem}
+
+  /* Sections */
+  section{padding:60px 0 8px}
+  .sec-head{margin-bottom:22px}
+  .sec-head .kicker{display:block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--bright);margin-bottom:4px}
+  .sec-head h2{font-size:1.9rem;font-weight:800}
+  .sec-head h2::after{content:"";display:block;width:56px;height:4px;background:var(--bright);margin-top:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--green);padding:24px;margin-bottom:16px}
+  .card-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .card h3{font-size:1.15rem;font-weight:700}
+  .role{color:var(--green);font-weight:600}
+  .where{color:var(--muted);font-size:.9rem}
+  .date{font-size:.8rem;font-weight:700;color:var(--deep);background:var(--mint);padding:4px 10px;height:fit-content;white-space:nowrap}
+  .card .date.below{display:inline-block;margin-top:10px}
+  .summary{font-style:italic;color:var(--muted);margin:12px 0 4px}
+  ul{margin:12px 0 0;padding-left:20px}
+  li{margin:6px 0}
+  li::marker{color:var(--bright)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid2 .card{margin-bottom:0}
+  .card p{margin:8px 0 0}
+  .pill{display:inline-block;font-size:.8rem;background:var(--deep);color:#fff;padding:3px 10px;margin-top:10px;font-weight:700}
+
+  footer{margin-top:64px;padding:28px 0;background:var(--deep);color:#BFF0D4;font-size:.88rem}
+  footer a{color:#fff}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media (max-width:760px){
+    .wrap{padding:0 16px}
+    .hero{padding:44px 0 72px}
+    .hero .wrap{grid-template-columns:1fr}
+    .photo{width:140px;height:140px;order:-1}
+    .tiles{grid-template-columns:1fr 1fr}
+    .tile:nth-child(2){border-right:0}
+    .tile:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .grid2{grid-template-columns:1fr}
+    .brand{display:none}
+    nav .wrap{justify-content:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">İlayda Tezcan<span>.</span></a>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#extracurricular">Extracurricular</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">MBA Candidate · Columbia Business School</div>
+      <h1>Hi, I'm İlayda<span class="dot">.</span></h1>
+      <p class="lead">Former BCG consultant who worked on strategy and investment across energy, industrials and the public sector in emerging markets. These days I'm in New York, working on climate, the energy transition, and building community.</p>
+      <div class="contact">
+        <a class="btn primary" href="mailto:ilaydatezcn@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 2.8-8 5-8-5V17h16V9.8z"/></svg>Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/ilaydatezcn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3V9.5zm7 0h3.8v1.6h.06c.53-1 1.830-2.06 3.77-2.06C21.6 9.04 22 11.5 22 14.7V21h-4v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.13 1.46-2.13 2.96V21h-4V9.5z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://github.com/ilaydatezcn-lab" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.880-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.770 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+      </div>
+      <p class="meta">New York, USA</p>
+    </div>
+    <img class="photo" src="headshot.jpg" width="220" height="220" alt="Portrait of İlayda Tezcan">
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="tiles">
+    <a class="tile" href="#experience"><div class="num">01</div><div class="lbl">Work Experience</div><div class="sub">BCG · Pfizer</div></a>
+    <a class="tile" href="#education"><div class="num">02</div><div class="lbl">Education</div><div class="sub">Columbia · Cambridge · Boğaziçi</div></a>
+    <a class="tile" href="#leadership"><div class="num">03</div><div class="lbl">Leadership</div><div class="sub">Climate · ESG · DEI · NGOs</div></a>
+    <a class="tile" href="#extracurricular"><div class="num">04</div><div class="lbl">Extracurricular</div><div class="sub">Clubs · Running · Events</div></a>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="experience">
+    <div class="sec-head"><span class="kicker">01</span><h2>Work Experience</h2></div>
+
+    <article class="card">
+      <div class="card-top">
+        <div><h3>Boston Consulting Group</h3><div class="role">Consultant</div><div class="where">Istanbul, Turkey</div></div>
+        <span class="date">Mar 2022 – Jan 2026</span>
+      </div>
+      <p class="summary">Led strategy and investment-related engagements across energy, industrials, and public-sector clients in emerging markets</p>
+      <ul>
+        <li>Conducted global expansion strategy for battery manufacturer and product launch strategies for energy storage solutions in Turkey, EU, Middle East, and Caspian</li>
+        <li>Built IRR analyses to evaluate renewable energy investments across 10 countries, incorporating CAPEX, PPA pricing, grid electricity prices, and FX assumptions to inform geographic and technology prioritization</li>
+        <li>Designed capital-allocation strategy for a $30B fund focused on industrial decarbonization to cut steel and cement emissions in emerging markets by 4%</li>
+        <li>Led outreach to sustainability heads across 100+ steel and cement companies across emerging markets, scaling identified investment opportunities from a $10B starting target to $27B within 3 months</li>
+        <li>Partnered with banks, ministries, and DFIs in Mexico, KSA, Pakistan, and Nigeria on heavy-industrial investment prioritization</li>
+        <li>Scaled breakthrough textile-to-textile recycling technology including market sizing, competitive dynamics, and commercialization</li>
+        <li>Built an industrial decarbonization institute and online research platform for a leading development bank</li>
+        <li>Conducted sell-side vendor due diligence for a minority stake transaction, leading market assessment for a leading fuel retailer</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div><h3>Pfizer</h3><div class="role">Marketing Associate</div><div class="where">Istanbul, Turkey</div></div>
+        <span class="date">Nov 2020 – Mar 2022</span>
+      </div>
+      <ul>
+        <li>Supported commercial strategy and lifecycle management for two vaccine portfolios</li>
+        <li>Analyzed pricing and reimbursement scenarios, assessing financial impact on Turkey’s national health system</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="education">
+    <div class="sec-head"><span class="kicker">02</span><h2>Education</h2></div>
+
+    <article class="card">
+      <div class="card-top">
+        <div><h3>Columbia Business School</h3><div class="role">MBA</div><div class="where">New York, USA</div></div>
+        <span class="date">Jan 2026 – Present</span>
+      </div>
+      <span class="pill">GMAT 720</span>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div><h3>University of Cambridge, Judge Business School Executive Education</h3><div class="role">Climate and Sustainability Stewardship Programme</div><div class="where">Cambridge, UK</div></div>
+        <span class="date">Dec 2024 – Mar 2025</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div><h3>Boğaziçi University</h3><div class="role">B.S. in Industrial Engineering</div><div class="where">Istanbul, Turkey</div></div>
+        <span class="date">Sep 2017 – Jun 2022</span>
+      </div>
+      <ul>
+        <li>Graduation with “Honors”</li>
+        <li>Ranked 306<sup>th</sup> among over 2 million students on Nationwide University Entrance Exam</li>
+        <li>High Honors in Aydın Doğan Foundation’s “Empowered Girls, Empowered Future” Scholarships &amp; Mentorship Program</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="leadership">
+    <div class="sec-head"><span class="kicker">03</span><h2>Leadership &amp; Voluntary Work</h2></div>
+    <div class="grid2">
+      <article class="card">
+        <h3>Climate Knowledge Initiative at CBS</h3><div class="role">Fellow</div><div class="where">New York, USA</div>
+        <span class="date below">May 2026 – Present</span>
+        <ul><li>Developed a research deck on U.S. electricity grid expansion and modernization needs with tailored solutions</li></ul>
+      </article>
+      <article class="card">
+        <h3>BCG ESG in EMs Initiative</h3><div class="role">Global People Lead</div><div class="where">Istanbul, Turkey</div>
+        <span class="date below">Dec 2023 – Jan 2026</span>
+        <ul><li>Built a 430 person network through cold outreach; coordinated engagement through newsletters and project staffing</li></ul>
+      </article>
+      <article class="card">
+        <h3>BCG Diversity, Equity, Inclusion</h3><div class="role">Women Sponsor</div><div class="where">Istanbul, Turkey</div>
+        <span class="date below">Mar 2023 – Jan 2026</span>
+        <ul><li>Supported initiatives to enhance diversity, equity, and inclusion, with a focus on empowering women in the workplace</li></ul>
+      </article>
+      <article class="card">
+        <h3>180 Degrees Consulting</h3><div class="role">Head of Client and Partner Success</div>
+        <span class="date below">Sep 2021 – Jul 2024</span>
+        <ul><li>Advised NGOs alongside leading consulting firms; currently mentoring university students interested in consulting</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="extracurricular">
+    <div class="sec-head"><span class="kicker">04</span><h2>Extracurricular Experience</h2></div>
+    <div class="grid2">
+      <article class="card"><h3>Columbia Women in Business</h3><div class="role">VP of Community</div><p>Lead social initiatives for CBS’s largest women’s organization</p></article>
+      <article class="card"><h3>Columbia Art Society</h3><div class="role">VP of Partnerships</div><p>Build external partnerships and organize exclusive NYC arts experiences</p></article>
+      <article class="card"><h3>Boğaziçi University Running Team</h3><div class="role">Racing Team Member</div><p>Ranked 1<sup>st</sup> in Türkiye’s amateur orienteering league in 2018</p></article>
+      <article class="card"><h3>Boğaziçi University Sports Committee</h3><div class="role">Event Coordinator</div><p>Organized Boğaziçi SnowBreak Festivals and SportsFest</p></article>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 İlayda Tezcan</span>
+    <span><a href="mailto:ilaydatezcn@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/ilaydatezcn" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/ilaydatezcn-lab" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
+<script>
+  const links = document.querySelectorAll('.links a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  document.querySelectorAll('main section').forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
