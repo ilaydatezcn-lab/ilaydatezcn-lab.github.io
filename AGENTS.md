@@ -22,10 +22,13 @@ This is İlayda Tezcan's personal website, hosted on GitHub Pages. Every file he
 
 ## 3. Style
 - **Vibe:** professional and casual. Confident and warm, first person where it fits, no corporate filler.
-- **Colors:** BCG-style greens. Deep green (`#03522D`) and green (`#197A56`) for headers and contrast, bright green (`#29BA74`) as the accent, light mint (`#EAF6EF`) for tints, dark gray (`#1F2A24`) text on white/off-white backgrounds. Clean consulting look: bold sans-serif headlines, sharp edges, lots of whitespace.
-- **No BCG branding:** use the palette and style only. Never use the BCG logo, wordmark, or anything that makes the site look official or affiliated.
-- **Navigation:** streamlined. One sticky top bar with anchor links to each section, and a single page that's easy to scan.
+- **Look:** dark and minimal, terminal-inspired. Black background (`#000`), warm cream text (`#ECE7DC`), and BCG-style bright green (`#29BA74`) as the only accent. Red/cyan (`#FF2A4F` / `#1EF2FF`) appear only inside the glitch effect.
+- **Type:** Space Grotesk, light weight (300), uppercase for headings and the oversized name. JetBrains Mono for dates, tags and metadata. Proper Turkish uppercase (İ, Ğ, Ç): mark Turkish words with `lang="tr"`.
+- **Signature details:** glitch on the name, blinking block cursor ▮, experience shown as log entries that expand with a fast typing reveal, subtle grain. All motion must switch off under `prefers-reduced-motion`.
+- **Inspiration, not a copy:** the mood is inspired by altayacar.com, but don't copy its layout, code, canvas scene, page-flip or music player.
+- **No BCG branding:** use the green only. Never use the BCG logo, wordmark, or anything that makes the site look official or affiliated.
+- **Navigation:** streamlined. One fixed top bar with anchor links to each section, plus a numbered section index in the intro. A single page that's easy to scan.
 - **Content order:** follow the CV's section order: Work Experience → Education → Leadership & Voluntary Work → Extracurricular Experience.
-- **Layout:** tiles/cards, generous whitespace, readable at phone width (no horizontal scroll), accessible contrast, semantic HTML.
+- **Layout:** log lists rather than boxed cards, lots of empty black space, readable at phone width (no horizontal scroll), accessible contrast, semantic HTML.
 - **Tech:** plain HTML and CSS in one file where possible, no build step, Google Fonts only for external assets.
 - **Writing:** American English, keep proper Turkish spelling (İlayda, Boğaziçi), dates written as `Mon YYYY – Mon YYYY`.
